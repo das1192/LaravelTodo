@@ -26,10 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
-
-        View::composer(['pages.*'],function($view){
+        
+        //sharing categories
+         View::composer(['pages.*'],function($view){
 
           
                 $view->with('categories',Category::where('active',1)->orderBy('id','desc')->get());
@@ -37,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
           
 
         });
-
+        //sharing todo list
         View::composer(['pages.*'],function($view){
 
            if(request()->has('cat') && request('cat') !=0){

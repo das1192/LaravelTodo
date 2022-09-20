@@ -1,6 +1,4 @@
 <ul>
-
-
     @foreach ($todos as $todo)
         <li>
 
@@ -22,9 +20,9 @@
     @endforeach
 </ul>
 
-
-
 <script>
+
+    // updates the check list
     $('.check').on('change', function() {
         let id = $(this).attr('data-id');
         if ($(this).prop('checked', true)) {

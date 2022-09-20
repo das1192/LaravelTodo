@@ -83,13 +83,7 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
-
-            //loadtodos();
-
-        });
-
-
+    // fuction to load todos
         function loadtodos() {
 
             $.get("{{ route('todos') }}", function(data, status) {
@@ -102,7 +96,7 @@
 
 
 
-
+   // adds task category
         $('#add-category').on('click', function() {
 
             let category = $('#category').val();
@@ -137,12 +131,10 @@
 
 
 
-
+ // adds task category wise
 
         $(document).on('submit', '#myform', function(e) {
             e.preventDefault();
-            // console.log($(this).prop('action'));
-
             $.ajax({
                 method: "POST",
                 url: $(this).prop('action'),
@@ -154,12 +146,11 @@
                 success: function(data) {
                     if (data == 1) {
                         alert("success");
-                        // $(this)[0].reset();
                         loadtodos();
                         $('#myform')[0].reset();
                     } else {
                         alert("failed");
-                        //  $('#myform')[0].reset();
+                        
                     }
 
                 }

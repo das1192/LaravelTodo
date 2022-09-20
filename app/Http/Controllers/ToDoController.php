@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 
 class ToDoController extends Controller
 {
-    //
 
 
+    // landing page
     public function index(){
 
         return view('pages.todo');
     }
 
 
-
+    // adding category post
     public function addCategory(Request $request){
 
         $category = new Category();
@@ -34,6 +34,7 @@ class ToDoController extends Controller
 
     }
 
+      // adding todo
     public function addTodo(Request $request){
 
         $todo = new Todo();
@@ -52,7 +53,7 @@ class ToDoController extends Controller
 
     }
 
-
+    // GET todo list
     public function todos(){
 
 
@@ -62,7 +63,7 @@ class ToDoController extends Controller
     }
 
 
-
+    // Deactivating Category
     public function deleteCategory($id){
 
         $category = Category::where('id',$id)->first();
@@ -72,6 +73,7 @@ class ToDoController extends Controller
         return redirect('/');
 
     }
+      // Deactivating Todo
     public function deleteTodo($id){
 
         $todo = Todo::where('id',$id)->first();
@@ -81,7 +83,7 @@ class ToDoController extends Controller
         return redirect('/');
 
     }
-
+  // updating todo
     public function updateTodo(Request $request){
 
         $todo = Todo::where('id',$request->id)->first();
