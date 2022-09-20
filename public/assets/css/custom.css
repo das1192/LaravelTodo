@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;1,100;1,200;1,700&display=swap');
+
+
+
+html {
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0px !important;
+    padding: 0px !important;
+    color: #333333;
+    overflow-x: hidden;
+    line-height: normal;
+    background-color: #102055;
+  }
+
+  .mt-15{
+    margin-top: 15px;
+  }
+  .mt-25{
+    margin-top: 25px;
+  }
+  .mt-35{
+    margin-top: 35px;
+  }
+  .mt-45{
+    margin-top: 45px;
+  }
+  .mt-55{
+    margin-top: 55px;
+  }
+  .mt-65{
+    margin-top: 65px;
+  }
+  .mt-75{
+    margin-top: 75px;
+  }
+  .mt-85{
+    margin-top: 85px;
+  }
+  .mt-95{
+    margin-top: 95px;
+  }
+
+
+.mbody{
+
+    padding: 35px;
+
+  }
+
+.title{
+
+    font-size: 18px;
+
+
+}
+
+.sub{
+
+    font-size: 13px;
+
+}
+
+.deep{
+    background-color:#424349;
+
+}
+
+.plr-15{
+
+    padding: 0px 15px;
+
+}
+
+.plr-35{
+
+    padding: 0px 35px;
+
+}
+.plr-2{
+
+    padding: 0px 2px;
+
+}
+.ml-15{
+    margin-left: 15px;
+}
+
+.my-label{
+
+    font-size: 13px;
+}
+
+.my-btn{
+
+
+    background-color: #424349;
+    color: white;
+    font-size: 13px;;
+}
+
+.my-btn:hover{
+
+
+    background-color: #424349;
+    color: white;
+    font-size: 13px;;
+}
+
+input[type="text"], textarea,select,option {
+
+    background-color : #fafafa; 
+  
+  }
+
+
+
+
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    font-size: 16px;
+  }
+
+  .red{
+    color: #A40000;
+    padding-right: 5px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .normal{
+    color:  #424349;
+    margin-left: 5px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
