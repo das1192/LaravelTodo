@@ -20,5 +20,6 @@ Route::post('/add-todo','ToDoController@addTodo')->name('add.todo');
 Route::get('/delete-category/{id}','ToDoController@deleteCategory')->name('delete.category');
 Route::get('/delete-todo/{id}','ToDoController@deleteTodo')->name('delete.todo');
 Route::get('/todos','ToDoController@todos')->name('todos');
+Route::get('/categories','ToDoController@selectCategories')->name('select-categories');
 Route::get('/updatetodo','ToDoController@updateTodo')->name('update.todo');
 

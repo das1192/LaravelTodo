@@ -61,6 +61,14 @@ class ToDoController extends Controller
         return view('pages.partial.todos');
 
     }
+    // for select categories
+    public function selectCategories(){
+
+
+
+        return view('pages.partial.select-categories');
+
+    }
 
 
     // Deactivating Category

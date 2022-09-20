@@ -4,8 +4,8 @@
 
             <div class="form-check row plr-35">
                 <label class="form-check-label col-11">
-                    <input type="checkbox" class="check form-check-input" data-id={{ $todo->id }} value="checkedValue"
-                        {{ $todo->status == 'done' ? 'checked' : '' }}>
+                    <input type="checkbox" class="check form-check-input" data-id={{ $todo->id }} value=""
+                        {{ $todo->status == 'done' ? 'checked' : '' }} >
                     @if ($todo->status == 'done')
                         <del>{{ $todo->details }}</del>
                     @else
@@ -19,14 +19,12 @@
         </li>
     @endforeach
 </ul>
-
+<script src="{{asset('assets/js/jquery-1.12.4.min.js')}}"></script>
 <script>
 
     // updates the check list
     $('.check').on('change', function() {
         let id = $(this).attr('data-id');
-        if ($(this).prop('checked', true)) {
-
             $.get("{{ route('update.todo') }}?id=" + id, function(data, status) {
                 if (data == 1) {
                     alert("updated");
@@ -34,10 +32,7 @@
                 }
             });
 
-        } else {
-
-
-        }
+        
 
     });
 </script>

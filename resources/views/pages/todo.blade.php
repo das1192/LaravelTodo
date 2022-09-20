@@ -12,7 +12,7 @@
                             @foreach ($categories as $cat)
                                 <a href="{{ route('home') }}?cat={{ $cat->id }}"> {{ $cat->name }}</a>|
                             @endforeach
-                            <a href="{{ route('home') }}?cat=0"> All</a>|
+                            <a href="{{ route('home') }}?cat=0"> All</a>
                         </p>
                     </div>
                     <div id="todo-list">
@@ -30,17 +30,11 @@
                                     <input type="text" required class="form-control col-12 " name="details">
                                 </div>
                                 <label for="category_name" class="my-label">Category</label>
-                                <div class="row plr-15">
-                                    <select required class="form-control col-6" name="category_id">
-                                        <option value="">Choose Category</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
+                                <div class="row plr-15" id="select-categories">
 
+                                    @include('pages.partial.select-categories')
 
-                                    <button type="submit" id="category-btn" class="col-3 btn my-btn plr-2 ml-15"> Add
-                                        TODO</button>
+                                   
                                 </div>
 
                             </div>
@@ -83,11 +77,21 @@
 
 @section('scripts')
     <script>
-    // fuction to load todos
+        // fuction to load todos
         function loadtodos() {
 
             $.get("{{ route('todos') }}", function(data, status) {
                 $('#todo-list').html(data);
+            });
+
+        }
+
+
+        // fuction to load categories
+        function loadcategories() {
+
+            $.get("{{ route('select-categories') }}", function(data, status) {
+                $('#select-categories').html(data);
             });
 
 
@@ -96,7 +100,7 @@
 
 
 
-   // adds task category
+        // adds task category
         $('#add-category').on('click', function() {
 
             let category = $('#category').val();
@@ -118,6 +122,7 @@
                     } else {
                         $('#categories').html(data);
                         $('#category').val("");
+                        loadcategories();
                     }
 
                 });
@@ -131,7 +136,7 @@
 
 
 
- // adds task category wise
+        // adds task category wise
 
         $(document).on('submit', '#myform', function(e) {
             e.preventDefault();
@@ -150,7 +155,7 @@
                         $('#myform')[0].reset();
                     } else {
                         alert("failed");
-                        
+
                     }
 
                 }
